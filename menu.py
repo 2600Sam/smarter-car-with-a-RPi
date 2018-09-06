@@ -13,7 +13,7 @@ def obd_hud():
         subprocess.call(['python3'] + ['hud.py'])
 
 def backup_view():
-        subprocess.call(['python3'] + ['backup_camera'])
+        subprocess.call(['python3'] + ['backup_camera.py'])
         #subprocess.call(['sudo'] + ['raspi-config']) #raspberry pi only program for the test
 
 def yes_option():
