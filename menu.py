@@ -1,5 +1,4 @@
 import tkinter as tk
-#from tkinter import *
 import subprocess
 
 grey = '#708090'
@@ -40,16 +39,23 @@ for frame in (menu_frame1, menu_frame2):
     frame.configure(background=grey)
 #menu page 1
 tk.Label(menu_frame1, text='Main Menu', bg = grey).pack(padx=100, pady=20, side='left')
-tk.Button(menu_frame1, text = 'OBD HUD', command = obd_hud, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
-tk.Button(menu_frame1, text = 'Navit\nGPS', command = navit_window, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
-tk.Button(menu_frame1, text = 'Raspi\nConfig', command = raspi_config, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
-tk.Button(menu_frame1, text = 'Close', command = menu.quit, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left') #doesn't work in idle but fine in python3 grrrr
-tk.Button(menu_frame1, text='Power Off\n The Pi', command=lambda:raise_frame(menu_frame2), height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
+tk.Button(menu_frame1, text = 'OBD HUD', command = obd_hud, height = b_height,
+          width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
+tk.Button(menu_frame1, text = 'Navit\nGPS', command = navit_window, height = b_height,
+          width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
+tk.Button(menu_frame1, text = 'Raspi\nConfig', command = raspi_config, height = b_height,
+          width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
+tk.Button(menu_frame1, text = 'Close', command = menu.quit, height = b_height,
+          width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left') #doesn't work in idle but fine in python3 grrrr
+tk.Button(menu_frame1, text='Power Off\n The Pi', command=lambda:raise_frame(menu_frame2), height = b_height,
+          width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 
 #menu page 2
 tk.Label(menu_frame2, text='Please Confirm that Action', bg = grey).pack()
-tk.Button(menu_frame2, text = 'Yes\nI\'m Sure\nPower Off', command = yes_option, bg = 'red',activebackground='red', height = b_height, width = b_width, highlightbackground = grey).pack()
-tk.Button(menu_frame2, text='NO\nGo Back to\nMain Menu', command=lambda:raise_frame(menu_frame1), height = b_height, width = b_width, highlightbackground = grey).pack()
+tk.Button(menu_frame2, text = 'Yes\nI\'m Sure\nPower Off', command = yes_option, bg = 'red',activebackground='red',
+          height = b_height, width = b_width, highlightbackground = grey).pack()
+tk.Button(menu_frame2, text='NO\nGo Back to\nMain Menu', command=lambda:raise_frame(menu_frame1),
+          height = b_height, width = b_width, highlightbackground = grey).pack()
 
 raise_frame(menu_frame1) #display menu page 1
 menu.mainloop()
