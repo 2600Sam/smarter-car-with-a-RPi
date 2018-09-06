@@ -7,8 +7,8 @@ grey = '#708090'
 def raise_frame(frame):
     frame.tkraise()
 
-def libre_window():
-        subprocess.call(['libreoffice']) #testing 
+def navit_window():
+        subprocess.call(['navit'])
 
 def obd_hud():
         subprocess.call(['python3'] + ['hud.py'])
@@ -18,7 +18,7 @@ def raspi_config():
 
 def yes_option():
         subprocess.call(['shutdown'] + ['now']) #Linux only "shut it down, shut it down forever" - Mr Book
-        #subprocess.call(['sudo'] + ['shutdown'] + ['now']) #need sudo?
+        #subprocess.call(['sudo'] + ['shutdown'] + ['now']) #need sudo? maybe?
 
 menu = tk.Tk()
 
@@ -41,7 +41,7 @@ for frame in (m1, m2):
 #menu page 1
 tk.Label(m1, text='Main Menu', bg = grey).pack(padx=100, pady=20, side='left')
 tk.Button(m1, text = 'OBD HUD', command = obd_hud, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
-tk.Button(m1, text = 'Libre Office', command = libre_window, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
+tk.Button(m1, text = 'Navit\nGPS', command = navit_window, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 tk.Button(m1, text = 'Raspi\nConfig', command = raspi_config, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 tk.Button(m1, text = 'Close', command = menu.quit, height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left') #doesn't work in idle but fine in python3 grrrr
 tk.Button(m1, text='Power Off\n The Pi', command=lambda:raise_frame(m2), height = b_height, width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
