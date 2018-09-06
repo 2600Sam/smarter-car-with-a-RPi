@@ -12,8 +12,9 @@ def navit_window():
 def obd_hud():
         subprocess.call(['python3'] + ['hud.py'])
 
-def raspi_config():
-        subprocess.call(['sudo'] + ['raspi-config']) #raspberry pi only program
+def backup_view():
+        subprocess.call(['python3'] + ['backup_camera'])
+        #subprocess.call(['sudo'] + ['raspi-config']) #raspberry pi only program for the test
 
 def yes_option():
         subprocess.call(['shutdown'] + ['now']) #Linux only "shut it down, shut it down forever" - Mr Book
@@ -43,7 +44,7 @@ tk.Button(menu_frame1, text = 'OBD HUD', command = obd_hud, height = b_height,
           width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 tk.Button(menu_frame1, text = 'Navit\nGPS', command = navit_window, height = b_height,
           width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
-tk.Button(menu_frame1, text = 'Raspi\nConfig', command = raspi_config, height = b_height,
+tk.Button(menu_frame1, text = 'Backup\nCamera View', command = backup_view, height = b_height,
           width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 tk.Button(menu_frame1, text = 'Close', command = menu.quit, height = b_height,
           width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left') #doesn't work in idle but fine in python3 grrrr
