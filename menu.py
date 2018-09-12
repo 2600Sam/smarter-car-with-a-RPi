@@ -39,7 +39,7 @@ for frame in (menu_frame1, menu_frame2):
     frame.grid(row=0, column=0, sticky='nsew')
     frame.configure(background=grey)
 #menu page 1
-tk.Label(menu_frame1, text='Main Menu', bg = grey).pack(padx=100, pady=20, side='left')
+tk.Label(menu_frame1, text='Smarter Car\nMain Menu', bg = grey).pack(padx=10, pady=20, side='left')
 tk.Button(menu_frame1, text = 'OBD HUD', command = obd_hud, height = b_height,
           width = b_width, highlightbackground = grey).pack(padx=5, pady=20, side='left')
 tk.Button(menu_frame1, text = 'Navit\nGPS', command = navit_window, height = b_height,
