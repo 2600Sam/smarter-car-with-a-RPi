@@ -11,7 +11,7 @@ pygame.init()
 #connect = obd.Async(fast=False)
 
 #screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN) #use for full screen
-screen = pygame.display.set_mode((800,480)) #set 800x480 for smaller raspi 7" screen
+screen = pygame.display.set_mode((1024,600)) #set 1024x600 for smaller raspi 7" screen
 screen_w = screen.get_width()
 screen_h = screen.get_height()
 circle_y = screen_h / 2
@@ -33,7 +33,7 @@ load_text_y = screen_h * .25
 
 headerFont = pygame.font.SysFont('Tahoma', 30)
 digitFont = pygame.font.SysFont('Tahoma', 25)
-numberFont = pygame.font.SysFont('Tahoma', 10)
+numberFont = pygame.font.SysFont('Tahoma', 15)
 timeFont = pygame.font.SysFont('Tahoma', 15)
 white = (255, 255, 255)
 offwhite = (200,200,200)
